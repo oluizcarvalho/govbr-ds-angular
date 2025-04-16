@@ -1,6 +1,6 @@
 {
   "name": "govbr-ds-angular",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,9 @@
     "test": "ng test",
     "test:coverage-local": "ng test --coverage --coverage-directory coverage",
     "test:coverage": "ng test --ci --json --coverage --test-location-in-results --output-file report.json",
-    "test:watch": "ng test --watch"
+    "test:watch": "ng test --watch",
+    "publish": "npm publish --public",
+    "release": "npm run build && npm run publish"
   },
   "private": true,
   "dependencies": {
