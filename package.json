@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build govbr-ds-angular",
+    "build:page": "ng build govbr-ds-angular-example",
     "watch": "ng build --watch --configuration development",
     "prepare": "husky || true",
     "p:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss,.html}\"",

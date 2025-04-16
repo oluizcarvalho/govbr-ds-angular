@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build govbr-ds-angular-example
+        run: npm run build:page
       - name: Deploy
         uses: actions/deploy-pages@v4
         with:
