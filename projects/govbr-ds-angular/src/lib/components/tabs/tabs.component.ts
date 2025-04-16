@@ -48,7 +48,7 @@ export class TabsComponent implements OnInit {
 	 * @type {string | number}
 	 * @private
 	 */
-	private _activeTab: string | number;
+	private _activeTab!: string | number;
 
 	/**
 	 * Define o tamanho das abas.

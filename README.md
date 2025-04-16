@@ -1,59 +1,134 @@
-# GovbrDsAngular
+# GovBR Design System - Componentes Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+[![versão npm](https://img.shields.io/npm/v/govbr-ds-angular.svg)](https://www.npmjs.com/package/govbr-ds-angular)
+[![Licença](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Development server
+Implementação em Angular do [Design System do Governo Brasileiro (GovBR DS)](https://www.gov.br/ds/). Esta biblioteca fornece componentes, diretivas e pipes Angular que implementam o Design System GovBR, facilitando a criação de aplicações que seguem as diretrizes de identidade visual do governo brasileiro.
 
-To start a local development server, run:
+## Índice
 
-```bash
-ng serve
-```
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Componentes Disponíveis](#componentes-disponíveis)
+- [Documentação](#documentação)
+- [Desenvolvimento](#desenvolvimento)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Instalação
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 1. Instale o pacote
 
 ```bash
-ng generate --help
+npm install govbr-ds-angular @govbr-ds/core
 ```
 
-## Building
+### 2. Importe os estilos
 
-To build the project run:
+Adicione os estilos do Design System GovBR e ícones do FontAwesome ao seu projeto importando-os no seu arquivo `angular.json`:
 
-```bash
-ng build
+```json
+   "styles": [
+      "@govbr-ds/core/dist/core.min.css",
+      "@fortawesome/fontawesome-free/css/all.min.css"
+   ],
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Uso
 
-## Running unit tests
+Após instalar e importar o módulo, você pode usar os componentes em seus templates:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+```html
+<!-- Exemplo de uso do componente botão -->
+<br-button variant="primary">Click me</br-button>
 
-```bash
-ng test
+<!-- Exemplo de uso do componente input -->
+<br-input label="Name" placeholder="Enter your name"></br-input>
 ```
 
-## Running end-to-end tests
+## Componentes Disponíveis
 
-For end-to-end (e2e) testing, run:
+Esta biblioteca fornece os seguintes componentes:
 
-```bash
-ng e2e
-```
+- **Alert**: Exibe mensagens de alerta com diferentes estados
+- **Breadcrumb**: Auxílio de navegação mostrando a localização do usuário na aplicação
+- **Checkbox**: Componente de input checkbox
+- **Collapse**: Painéis de conteúdo recolhíveis
+- **Cookie Bar**: Barra de notificação de consentimento de cookies
+- **Date Time Picker**: Componente de seleção de data e hora
+- **Dialog Confirm**: Componente de diálogo de confirmação
+- **Input**: Componente de entrada de texto
+- **Item Info**: Componente de exibição de informações
+- **Loading**: Componente indicador de carregamento
+- **Magic Button**: Componente de botão aprimorado
+- **Menu**: Componente de menu de navegação
+- **Multi Select**: Componente de dropdown de seleção múltipla
+- **Paginator**: Componente de paginação
+- **Radio**: Componente de botão de rádio
+- **Select**: Componente de seleção dropdown
+- **Switch**: Componente de interruptor
+- **Tabs**: Componente de interface com abas
+- **Textarea**: Componente de entrada de texto multi-linha
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Diretivas
 
-## Additional Resources
+- **Button**: Diretiva para estilização de botões
+- **Feedback**: Diretiva para feedback de formulários
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Pipes
+
+- **GetIconByState**: Obtém o ícone apropriado com base no estado
+- **HasError**: Verifica erros de formulário
+
+## Documentação
+
+Para documentação detalhada sobre cada componente, consulte:
+
+- [Documentação do Design System GovBR](https://www.gov.br/ds/)
+- [Exemplos de Componentes](https://www.gov.br/ds/components)
+
+## Desenvolvimento
+
+### Configuração
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/your-org/govbr-ds-angular.git
+   cd govbr-ds-angular
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+### Servidor de desenvolvimento
+
+Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar qualquer um dos arquivos de origem.
+
+### Compilando a biblioteca
+
+Execute `ng build govbr-ds-angular` para compilar a biblioteca. Os artefatos de compilação serão armazenados no diretório `dist/`.
+
+### Executando testes
+
+Execute `ng test` para executar os testes unitários via [Jest](https://jestjs.io/).
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
+
+1. Faça um fork do repositório
+2. Crie sua branch de recurso (`git checkout -b feature/recurso-incrivel`)
+3. Faça commit de suas alterações (`git commit -m 'Adiciona algum recurso incrível'`)
+4. Faça push para a branch (`git push origin feature/recurso-incrivel`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
+
+---
+
+Desenvolvido com ❤️ para os serviços públicos digitais brasileiros.

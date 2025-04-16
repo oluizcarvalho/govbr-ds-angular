@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from '@angular/core';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import { ButtonDirective } from '@shared/directives/button';
+import { ButtonDirective } from '../../directives';
 
 export interface DialogConfirmInputs {
 	/** Mensagem a ser exibida no diálogo */

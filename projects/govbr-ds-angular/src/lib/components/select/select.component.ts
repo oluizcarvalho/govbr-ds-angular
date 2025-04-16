@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import BRSelect from '@govbr-ds/core/dist/components/select/select';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { SelectOptions } from '../../models/select.model';
+import { SelectOptions } from '../../models';
 
 /**
  * Componente SelectComponent é responsável por exibir um seletor de itens.
@@ -79,7 +79,7 @@ export class SelectComponent implements AfterViewInit, ControlValueAccessor {
 	/** Instância do componente BRSelect. */
 	instance: any;
 
-	protected _value: string;
+	protected _value!: string;
 
 	/** Obtém o valor do seletor. */
 	get value(): string {

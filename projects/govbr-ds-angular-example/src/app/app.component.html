@@ -1,0 +1,140 @@
+<app-loading />
+<div class="demo-wrapper">
+	<h1><i class="fa-solid fa-cubes"></i> Exemplo de uso dos componentes govbr-ds-angular</h1>
+
+	<!-- Loading component -->
+
+	<div class="demo-grid">
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-list"></i> Select</h2>
+			<app-select
+				[label]="'Selecione uma opção'"
+				[id]="'select1'"
+				[placeholder]="'Escolha'"
+				[options]="[
+					{ label: 'Opção 1', value: 1 },
+					{ label: 'Opção 2', value: 2 },
+					{ label: 'Opção 3', value: 3 },
+				]"
+				[(ngModel)]="selectedOption"
+			>
+			</app-select>
+		</div>
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-user"></i> Input</h2>
+			<app-input [label]="'Nome'" [id]="'input1'" [(ngModel)]="inputValue"> </app-input>
+		</div>
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-check-square"></i> Checkbox</h2>
+			<app-checkbox [label]="'Aceitar termos'" [id]="'checkbox1'" [(value)]="isChecked"> </app-checkbox>
+		</div>
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-dot-circle"></i> Radio</h2>
+			<app-radio
+				[label]="'Escolha uma opção'"
+				[options]="[
+					{ label: 'Opção A', value: 'A' },
+					{ label: 'Opção B', value: 'B' },
+				]"
+				[(ngModel)]="selectedRadio"
+			>
+			</app-radio>
+		</div>
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-calendar"></i> DateTime Picker</h2>
+			<app-date-time-picker [label]="'Data e Hora'" [id]="'datetime1'" [(ngModel)]="selectedDate">
+			</app-date-time-picker>
+		</div>
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-align-left"></i> Textarea</h2>
+			<app-textarea [label]="'Observações'" [id]="'textarea1'" [(ngModel)]="textAreaValue"> </app-textarea>
+		</div>
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-magic"></i> Magic Button</h2>
+			<app-magic-button [icon]="'fa-magic'" [fontSet]="'fas'" [size]="'large'" [label]="'Botão Mágico'">
+			</app-magic-button>
+		</div>
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-bell"></i> Alert</h2>
+      <app-alert />
+			<button br-button color="primary" (click)="showAlert()">Mostrar Alerta</button>
+
+		</div>
+		<div class="demo-card demo-tabs">
+			<h2><i class="fa-solid fa-folder"></i> Tabs</h2>
+			<app-tabs
+				[tabs]="[
+					{ label: 'Aba 1', id: 1, icon: 'fa-solid fa-home', active: activeTab === 1 },
+					{ label: 'Aba 2', id: 2, icon: 'fa-solid fa-star', active: activeTab === 2 },
+					{ label: 'Aba 3', id: 3, icon: 'fa-solid fa-cog', active: activeTab === 3 },
+				]"
+				[(activeTab)]="activeTab"
+			></app-tabs>
+		</div>
+
+		<!-- Novos componentes adicionados -->
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-toggle-on"></i> Switch</h2>
+			<app-switch
+				[label]="'Ativar notificações'"
+				[id]="'switch1'"
+				[hintActive]="'Notificações ativadas'"
+				[hintInactive]="'Notificações desativadas'"
+				[(ngModel)]="switchValue"
+			>
+			</app-switch>
+		</div>
+
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-list-check"></i> Multi Select</h2>
+			<app-multi-select
+				[label]="'Selecione várias opções'"
+				[id]="'multiselect1'"
+				[placeholder]="'Escolha opções'"
+				[options]="[
+					{ label: 'Opção 1', value: 1 },
+					{ label: 'Opção 2', value: 2 },
+					{ label: 'Opção 3', value: 3 },
+					{ label: 'Opção 4', value: 4 },
+				]"
+				[(ngModel)]="multiSelectValues"
+			>
+			</app-multi-select>
+		</div>
+
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-spinner"></i> Loading</h2>
+			<div class="demo-loading-wrapper">
+				<app-magic-button
+					[icon]="'fa-spinner'"
+					[fontSet]="'fas'"
+					[size]="'medium'"
+					[label]="'Mostrar Loading'"
+					(click)="toggleLoading()"
+				>
+				</app-magic-button>
+				<p class="loading-hint">Clique no botão para mostrar o componente de loading por 3 segundos</p>
+			</div>
+		</div>
+
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-chevron-down"></i> Collapse Item</h2>
+			<app-collapse-item [label]="'Informações adicionais'" [id]="'collapse1'" [(expanded)]="isCollapseExpanded">
+				<p>Este é o conteúdo do item de colapso. Você pode adicionar qualquer conteúdo HTML aqui.</p>
+				<p>O componente CollapseItem é útil para organizar informações que não precisam estar sempre visíveis.</p>
+			</app-collapse-item>
+		</div>
+
+		<div class="demo-card">
+			<h2><i class="fa-solid fa-file-lines"></i> Paginator</h2>
+			<app-paginator
+				[length]="totalItems"
+				[pageSize]="pageSize"
+				[pageIndex]="currentPage"
+				(page)="onPageChange($event)"
+			>
+			</app-paginator>
+			<p class="paginator-info">Página atual: {{ currentPage }} de {{ totalItems / pageSize }}</p>
+		</div>
+	</div>
+</div>

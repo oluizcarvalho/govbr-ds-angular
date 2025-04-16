@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { AbstractControl, ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
-import dayjs from 'dayjs';
 import BRDateTimePicker from '@govbr-ds/core/dist/components/datetimepicker/datetimepicker';
 
 export const TYPE_DATE_PICKER = {
@@ -208,11 +207,18 @@ export class DateTimePickerComponent implements OnInit, AfterViewInit, ControlVa
 	 */
 	normalizeDate(date: string | Date): string {
 		if (date instanceof Date) {
-			return dayjs(date).format('DD/MM/YYYY');
+			const day = String(date.getDate()).padStart(2, '0');
+			const month = String(date.getMonth() + 1).padStart(2, '0');
+			const year = date.getFullYear();
+			return `${day}/${month}/${year}`;
 		}
 		if (!date) return date;
 		const [day, month, year] = date.split('/');
-		return dayjs(`${year}-${day}-${month}`).format('DD/MM/YYYY');
+		const parsedDate = new Date(`${year}-${month}-${day}`);
+		const formattedDay = String(parsedDate.getDate()).padStart(2, '0');
+		const formattedMonth = String(parsedDate.getMonth() + 1).padStart(2, '0');
+		const formattedYear = parsedDate.getFullYear();
+		return `${formattedDay}/${formattedMonth}/${formattedYear}`;
 	}
 
 	/**

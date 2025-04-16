@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, ElementRef, inject } from '@angular/core';
-import { CookieModel } from '@shared/components/cookie-bar/model/cookie.model';
+import { AfterViewInit, Component, ElementRef, inject, input, output } from '@angular/core';
 import BRCookiebar from '@govbr-ds/core/dist/components/cookiebar/cookiebar';
 import cookies from './content/cookies.json';
+import { CookieModel } from './model/cookie.model';
 
 @Component({
 	selector: 'app-cookie-bar',
@@ -13,21 +13,19 @@ import cookies from './content/cookies.json';
 export class CookieBarComponent implements AfterViewInit {
 	private instance: unknown;
 	private brCookieBar = inject(ElementRef);
+	cookiesJson = input<object>(cookies);
+	submit = output<CookieModel>();
 
 	ngAfterViewInit(): void {
 		const component = this.brCookieBar.nativeElement.querySelector('.br-cookiebar');
 		const params = {
 			name: 'br-cookiebar',
 			component: component,
-			json: cookies,
+			json: this.cookiesJson(),
 			lang: 'pt-br',
 			mode: 'default',
-			callback: (response: CookieModel) => this.submit(response),
+			callback: (response: CookieModel) => this.submit.emit(response),
 		};
 		this.instance = new BRCookiebar(params);
-	}
-
-	submit(response: CookieModel): void {
-		console.log(response);
 	}
 }

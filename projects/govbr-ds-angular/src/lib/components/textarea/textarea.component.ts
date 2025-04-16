@@ -1,5 +1,5 @@
+import { NgClass } from '@angular/common';
 import { booleanAttribute, Component, EventEmitter, forwardRef, Input, numberAttribute, Output } from '@angular/core';
-import { NgClass, NgTemplateOutlet } from '@angular/common';
 import {
 	AbstractControl,
 	ControlValueAccessor,
@@ -23,7 +23,7 @@ import { SizeOptions } from '../../types/size.type';
 @Component({
 	selector: 'app-textarea',
 	standalone: true,
-	imports: [NgClass, NgTemplateOutlet, FormsModule],
+	imports: [NgClass, FormsModule],
 	templateUrl: './textarea.component.html',
 	styleUrl: './textarea.component.scss',
 	providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => TextareaComponent), multi: true }],
@@ -41,7 +41,7 @@ export class TextareaComponent implements ControlValueAccessor, Validator {
 	 * @type {string}
 	 * @required
 	 */
-	@Input({ required: true }) id: string;
+	@Input({ required: true }) id!: string;
 
 	/**
 	 * Nome do campo de texto.
@@ -100,7 +100,7 @@ export class TextareaComponent implements ControlValueAccessor, Validator {
 	 * Comprimento máximo do campo de texto.
 	 * @type {number}
 	 */
-	@Input({ transform: numberAttribute }) maxLength: number;
+	@Input({ transform: numberAttribute }) maxLength!: number;
 
 	/**
 	 * Obtém se o campo de texto é obrigatório.

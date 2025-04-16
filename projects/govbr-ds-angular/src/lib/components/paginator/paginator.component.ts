@@ -46,13 +46,13 @@ export class PaginatorComponent implements OnChanges {
 	 * @type {number}
 	 * @required
 	 */
-	@Input({ transform: numberAttribute, required: true }) length: number;
+	@Input({ transform: numberAttribute, required: true }) length!: number;
 
 	/**
 	 * Tamanho da página.
 	 * @type {number}
 	 */
-	@Input({ transform: numberAttribute }) pageSize: number;
+	@Input({ transform: numberAttribute }) pageSize!: number;
 
 	private _pageIndex: number = 1;
 
@@ -77,13 +77,13 @@ export class PaginatorComponent implements OnChanges {
 	 * Opções de tamanho da página.
 	 * @type {number[]}
 	 */
-	@Input() pageSizeOptions: number[];
+	@Input() pageSizeOptions!: number[];
 
 	/**
 	 * Indica se os botões de primeira e última página devem ser exibidos.
 	 * @type {boolean}
 	 */
-	@Input({ transform: booleanAttribute }) showFirstLastButtons: boolean;
+	@Input({ transform: booleanAttribute }) showFirstLastButtons!: boolean;
 
 	/**
 	 * Evento emitido quando a página muda.
@@ -92,9 +92,9 @@ export class PaginatorComponent implements OnChanges {
 	@Output() page: EventEmitter<PageEvent> = new EventEmitter<PageEvent>();
 
 	expandedOptions = false;
-	totalPages: number;
+	totalPages!: number;
 	pageIndexOptions: number[] = [];
-	previousPageIndex: number;
+	previousPageIndex!: number;
 	readonly uuid = Math.random().toString(36).substring(6);
 
 	private brPaginator = inject(ElementRef);

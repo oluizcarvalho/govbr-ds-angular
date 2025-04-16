@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { StateType } from '@shared/utils';
 import { Subject } from 'rxjs';
+import { StateType } from '../../utils';
 
 /**
  * Representa um evento de alerta.

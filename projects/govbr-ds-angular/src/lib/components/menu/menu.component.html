@@ -8,7 +8,7 @@
 			</div>
 		</div>
 		<nav class="menu-body">
-			@for (lvl1 of list; track $index) {
+			@for (lvl1 of list(); track $index) {
 				@if (!lvl1.children) {
 					<ng-container [ngTemplateOutlet]="menuItem" [ngTemplateOutletContext]="{ $implicit: lvl1 }"></ng-container>
 				} @else {

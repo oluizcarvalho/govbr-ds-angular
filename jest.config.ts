@@ -185,13 +185,6 @@ const config: Config = {
 	// An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
 	transformIgnorePatterns: ['^node_modules/@govbr-ds/core/dist/.*$'],
 
-	moduleNameMapper: {
-		'@app/(.*)': '<rootDir>/app/$1',
-		'@env/(.*)': '<rootDir>/environments/$1',
-		'@shared/(.*)': '<rootDir>/app/shared/$1',
-		'@clients/(.*)': '<rootDir>/app/clients/$1',
-		'@features/(.*)': '<rootDir>/app/features/$1',
-	},
 	modulePaths: ['<rootDir>'],
 
 	// An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them

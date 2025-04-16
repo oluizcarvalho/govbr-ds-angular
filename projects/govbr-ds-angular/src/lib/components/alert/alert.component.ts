@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { GetIconByStatePipe } from '@shared/pipes';
 import { AlertEvent, AlertService } from './alert.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import {GetIconByStatePipe} from '../../pipes';
+
 
 /**
  * Componente AlertComponent é responsável por exibir mensagens de alerta com animações.

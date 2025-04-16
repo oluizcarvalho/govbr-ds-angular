@@ -8,8 +8,8 @@ import {
 	Output,
 } from '@angular/core';
 import { NgClass, NgTemplateOutlet } from '@angular/common';
-import { RadioOptions } from '@shared/models/radio.model';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { RadioOptions } from '../../models';
 
 /**
  * Componente RadioComponent é responsável por exibir um grupo de opções de rádio.

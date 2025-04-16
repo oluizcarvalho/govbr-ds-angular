@@ -1,5 +1,21 @@
 {
   "name": "govbr-ds-angular",
+  "author": "oluizcarvalho",
+  "license": "MIT",
+  "description": "Implementação em Angular do Design System GovBR.",
+  "keywords": ["angular", "govbr", "design system"],
+  "homepage": "https://github.com/oluizcarvalho/govbr-ds-angular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oluizcarvalho/govbr-ds-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oluizcarvalho/govbr-ds-angular/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/oluizcarvalho/govbr-ds-angular"
+  },
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^19.2.0",

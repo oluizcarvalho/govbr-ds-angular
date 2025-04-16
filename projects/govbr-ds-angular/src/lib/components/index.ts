@@ -6,8 +6,6 @@ export * from './collapse-item/collapse-item.component';
 export * from './cookie-bar/cookie-bar.component';
 export * from './date-time-picker/date-time-picker.component';
 export * from './dialog-confirm/dialog-confirm.component';
-export * from './footer/footer.component';
-export * from './header/header.component';
 export * from './input/input.component';
 export * from './item-info/item-info.component';
 export * from './loading/loading.component';
@@ -18,7 +16,6 @@ export * from './paginator/paginator.component';
 export * from './radio/radio.component';
 export * from './select/select.component';
 export * from './switch/switch.component';
-export * from './table/table.component';
 export * from './tabs/tabs.component';
 export * from './textarea/textarea.component';
 
@@ -31,9 +28,6 @@ export * from './menu/types/menu.type';
 
 // Models
 export * from './cookie-bar/model/cookie.model';
-
-// Constants
-export * from './menu/const/list-menu';
 
 // Interceptors
 export * from './loading/interceptors/loading.interceptor';
