@@ -1,0 +1,15 @@
+{
+  "name": "govbr-ds-angular",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
+    "@angular/cdk": "^19.2.10",
+    "@govbr-ds/core": ">=3.6.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
