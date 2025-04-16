@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build govbr-ds-angular",
     "watch": "ng build --watch --configuration development",
     "prepare": "husky || true",
     "p:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss,.html}\"",
@@ -14,7 +14,7 @@
     "test:coverage": "ng test --ci --json --coverage --test-location-in-results --output-file report.json",
     "test:watch": "ng test --watch",
     "publish": "npm publish --public",
-    "release": "npm run build && npm run publish"
+    "release": "npm run build && cd dist/govbr-ds-angular && npm run publish"
   },
   "private": true,
   "dependencies": {
